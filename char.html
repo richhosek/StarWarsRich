@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Character Info</h1>
+    <h3 id="name"></h3>
+    <h4 id="role"></h4>
+    <h4 id="age"></h4>
+    <h4 id="forcePoints"></h4>
+
+    <script>
+        console.log(location.pathname.replace("char", "api/characters"))
+        $(function() {
+            $.get(location.pathname.replace("char", "api/characters"))
+            .then(function(character){
+                console.log(character);
+                $("#name").text(character.name);
+                $("#role").text(character.role);
+                $("#age").text(character.age);
+                $("#forcePoints").text(character.forcePoints);
+            })
+        })
+    </script>
+</body>
+</html>

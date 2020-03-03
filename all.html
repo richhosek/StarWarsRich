@@ -37,7 +37,7 @@
                         $("<div>").addClass("card")
                             .append(
                                 $("<div>").addClass("card-header")
-                                    .html(`<h3><strong>Character Statistics</strong> ${character.routeName}</h3>`),
+                                    .html(`<h3><strong>Character Statistics</strong> <a href="/char/${character.routeName}" >${character.routeName}</a></h3>`),
                                 $("<div>").addClass("card-body")
                                     .append(
                                         $("<h4>").text(`${character.name}`),
